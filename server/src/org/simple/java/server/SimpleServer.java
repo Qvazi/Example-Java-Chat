@@ -54,9 +54,8 @@ public class SimpleServer implements TCPConnectionListener {
 
     private void sendToAllConnections(String value) {
         System.out.println(value);
-        final int cnt = connections.size();
-        for (int i = 0; i < connections.size(); i++) {
-            connections.get(i).sendString(value);
+        for (TCPConnection connection : connections) {
+            connection.sendString(value);
         }
     }
 }
