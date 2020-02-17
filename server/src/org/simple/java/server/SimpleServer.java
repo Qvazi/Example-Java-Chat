@@ -16,7 +16,7 @@ public class SimpleServer implements TCPConnectionListener {
 
     private SimpleServer() {
         System.out.println("Server running...");
-        try (ServerSocket serverSocket = new ServerSocket(2106)) {
+        try (ServerSocket serverSocket = new ServerSocket(8189)) {
             while (true) {
                 try {
                     new TCPConnection(this, serverSocket.accept());
